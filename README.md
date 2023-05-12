@@ -8,14 +8,14 @@
 - [Prerequisites](#prerequisites)
 - [Docker](#dockcont)
 - [Mongo CTL](#monctl)
+- [MongoDb Basic Commands](#usesyn)
 - [Mondo Databse Creation](#credata) 
-- [USE Syntax](#usesyn)
 - [Collections in Mongo](#coll)
 - [Objects in Collections](#objects)
 - [Searching for Databases , Collection and objects](#search)
 - [Deleting](#del)
 
-<p id="monctl">This is the paragraph I want to link to.</p>
+<p id="moctl">This is the paragraph I want to link to.</p>
 
 
 ## Prerequisites 
@@ -56,6 +56,23 @@ root@45ab820c7a09:/# mongo
 ```
 
 Now Create a new Database by typing “use databasename”
+
+## MongoDb Basic Commands to Begin With 
+<p id="usesyn">This is the paragraph I want to link to.</p>
+
+1. show dbs - shows a list of all the databases in your MongoDB instance.
+2. use <database_name> - switches to the specified database. If the database doesn't exist, it will be created when you first save data to it.
+3. db.dropDatabase() - deletes the current database.
+4. show collections - shows a list of all the collections in the current database.
+5. db.createCollection(<collection_name>) - creates a new collection in the current database with the specified name.
+6. db.<collection_name>.insertOne(<document>) - inserts a new document into the specified collection.
+7. db.<collection_name>.find() - retrieves all documents in the specified collection.
+8. db.<collection_name>.find(<query>) - retrieves documents that match the specified query in the specified collection.
+9. db.<collection_name>.updateOne(<query>, <update>) - updates the first document that matches the specified query in the specified collection with the specified update.
+10. db.<collection_name>.updateMany(<query>, <update>) - updates all documents that match the specified query in the specified collection with the specified update.
+11. db.<collection_name>.deleteOne(<query>) - deletes the first document that matches the specified query in the specified collection.
+12. db.<collection_name>.deleteMany(<query>) - deletes all documents that match the specified query in the specified collection.
+	
 ```
 > use databasename
 switched to db databasename
