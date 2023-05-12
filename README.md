@@ -15,7 +15,7 @@
 - [Searching for Databases , Collection and objects](#search)
 - [Deleting](#del)
 
-<p id="col">This is the paragraph I want to link to.</p>
+<p id="obs">This is the paragraph I want to link to.</p>
 
 
 ## Prerequisites 
@@ -168,8 +168,30 @@ db.createCollection(“my_collection_name”)
 	
 This will create a new collection named : my_collection_name inside the above mentioned database .
 
-Inserting Objects inside Collection 
-To insert objects and values inside said collection , we can use the command 
+	
+And similarly we can create collections after switching to preffered database .
+
+	
+	
+```
+db.createCollection(“my_collection_1”)
+db.createCollection(“my_collection_2”)
+db.createCollection(“my_collection_3”)
+db.createCollection(“my_collection_4”)
+db.createCollection(“my_collection_5”)
+```	
+	
+	
+## Inserting Objects inside Collection 
+	<p id="objects">This is the paragraph I want to link to.</p>
+
+In Mongodb you can store different object 
+such as car with sets of properties like tyres, form_factor, Mileage, Fuel_norms.
+And other object 
+Such as movies with sets of properties like movie_name, cast_crew, release_date, Earning, Ranking .
+Both of the object can be saved inside one collection group in a database 	
+	
+#### To insert objects and values inside said collection , we can use the command 
 
 	
 	
@@ -182,7 +204,7 @@ db.my_collection_name.insertOne({car_name: “Tata_nexon”, tyre_sixe: “16 in
 	
 Above command will store object will defined property set inside mentioned database and declared collection “my_collection_name”
 
-	
+
 	
 The syntax insertOne define a single object that is getting saved in collection . 
 For multiple objects we can use insertMany .
