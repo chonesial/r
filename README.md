@@ -7,13 +7,13 @@
 
 - [Prerequisites](#prerequisites)
 - [Docker](#dockcont)
-- Mongo CTL
-- Mondo Databse Creation 
-- USE Syntax
-- Collections in Mongo
-- Objects in Collections
-- Searching for Databases , Collection and objects
-- Deleting
+- [Mongo CTL](#monctl)
+- [Mondo Databse Creation](#credata) 
+- [USE Syntax](#usesyn)
+- [Collections in Mongo](#coll)
+- [Objects in Collections](#objects)
+- [Searching for Databases , Collection and objects](#search)
+- [Deleting](#del)
 
 <p id="my-paragraph">This is the paragraph I want to link to.</p>
 
