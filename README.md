@@ -28,24 +28,18 @@ or
 you can use official Image  
  </p>
 
-
-
-
-
-
-
 ## Creating Container using docker compose
-<p id="#dockcont">
+<p id="dockcont">
 
-docker-compose.yml
-('''
+#### docker-compose.yml
+```
 version: '3'
 services:
   mongo:
     image: mongo:5
     ports:
       - "127.0.0.1:27017:27017"
-''')
+```
 //using mongo:5 as mongo:latest is unstable version of mongo 
 
 Inside the container 
