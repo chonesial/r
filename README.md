@@ -58,20 +58,30 @@ root@45ab820c7a09:/# mongo
 Now Create a new Database by typing “use databasename”
 
 ## MongoDb Basic Commands to Begin With 
-<p id="usesyn">This is the paragraph I want to link to.</p>
+<p id="usesyn">These are some basic commands that we will use as we move forward operating the databse</p>
 
-1. show dbs - shows a list of all the databases in your MongoDB instance.
-2. use <database_name> - switches to the specified database. If the database doesn't exist, it will be created when you first save data to it.
-3. db.dropDatabase() - deletes the current database.
-4. show collections - shows a list of all the collections in the current database.
-5. db.createCollection(<collection_name>) - creates a new collection in the current database with the specified name.
-6. db.<collection_name>.insertOne(<document>) - inserts a new document into the specified collection.
-7. db.<collection_name>.find() - retrieves all documents in the specified collection.
-8. db.<collection_name>.find(<query>) - retrieves documents that match the specified query in the specified collection.
-9. db.<collection_name>.updateOne(<query>, <update>) - updates the first document that matches the specified query in the specified collection with the specified update.
-10. db.<collection_name>.updateMany(<query>, <update>) - updates all documents that match the specified query in the specified collection with the specified update.
-11. db.<collection_name>.deleteOne(<query>) - deletes the first document that matches the specified query in the specified collection.
-12. db.<collection_name>.deleteMany(<query>) - deletes all documents that match the specified query in the specified collection.
+- show dbs - shows a list of all the databases in your MongoDB instance.
+- use <database_name> - switches to the specified database. If the database doesn't exist, it will be created when you first save data   to it.
+
+- db.dropDatabase() - deletes the current database.
+
+- show collections - shows a list of all the collections in the current database.
+
+- db.createCollection(<collection_name>) - creates a new collection in the current database with the specified name.
+
+- db.<collection_name>.insertOne(<document>) - inserts a new document into the specified collection.
+
+- db.<collection_name>.find() - retrieves all documents in the specified collection.
+
+- db.<collection_name>.find(<query>) - retrieves documents that match the specified query in the specified collection.
+
+- db.<collection_name>.updateOne(<query>, <update>) - updates the first document that matches the specified query in the specified        collection with the specified update.
+
+- db.<collection_name>.updateMany(<query>, <update>) - updates all documents that match the specified query in the specified collection   with the specified update.
+
+- db.<collection_name>.deleteOne(<query>) - deletes the first document that matches the specified query in the specified collection.
+
+- db.<collection_name>.deleteMany(<query>) - deletes all documents that match the specified query in the specified collection.
 
 
 ## Creation and Managing the Database 
