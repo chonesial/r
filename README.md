@@ -106,21 +106,23 @@ switched to db databasename
 use database1 
 ```			
 
-it will create a database with name database 1
+it will create a database with name database 1 and switch automatically switch the databse for operations 
 
 
 ```
 use database 2 
 ```			
 	
-it will create a database with name database 2
+it will create a database with name database 2 and switch automatically switch the databse from 1 for operations on 2
+
 
 	
 ```
 use database 3 
 ```
 	
-it will create a database with name database 2
+it will create a database with name database 2 and switch automatically switch the databse from 2 for operations on 3
+
 
 
 Now we can list all the database using 
@@ -147,15 +149,11 @@ sunildatabse  0.000GB
 ```
 	
 ## Collections in Mongodb
+
 <p id="coll">After the Creation of Database and login , we move forward for creating a collection in which we will store our objects as entries.</p>
 
 Collection in mongoldb are the groups of objects with different sets of properties , different objects with different properties and unique values can be stored inside a collection group without enforcing any common schema as it follows in other RDBMS such as sql . 
 
-In Mongodb you can store different object 
-such as car with sets of properties like tyres, form_factor, Mileage, Fuel_norms.
-And other object 
-Such as movies with sets of properties like movie_name, cast_crew, release_date, Earning, Ranking .
-Both of the object can be saved inside one collection group in a database 
 
 To create a collection we can use 
 
@@ -164,10 +162,7 @@ To create a collection we can use
 db.createCollection(“my_collection_name”)
 ```
 
-
-	
 This will create a new collection named : my_collection_name inside the above mentioned database .
-
 	
 And similarly we can create collections after switching to preffered database .
 
@@ -180,18 +175,65 @@ db.createCollection(“my_collection_3”)
 db.createCollection(“my_collection_4”)
 db.createCollection(“my_collection_5”)
 ```	
+Similarly we can view all the collections after switching to preffered database by using “show collection” syntax.
+
 	
+
+	
+```
+show collections	
+```	
+
+```
+> show dbs
+```
+
+output 
+
+```
+admin         0.000GB
+config        0.000GB
+local         0.000GB
+sunildatabse  0.000GB
+```
+	
+	
+#### Now write use dbs for switching to preffered database	
+
+```
+> use sunildatabse
+```	
+#### you will switch to sunildatabase and now write below command
+	
+```
+show collections	
+```	
+#### the output will be as follow 
+
+```
+marvel-movies
+moviename
+mycollection
+```	
 	
 ## Inserting Objects inside Collection 
-	<p id="objects">This is the paragraph I want to link to.</p>
 
-In Mongodb you can store different object 
+<p id="objects">This is the paragraph I want to link to.</p>
+	
+In Mongodb you can store different object, 
 such as car with sets of properties like tyres, form_factor, Mileage, Fuel_norms.
 And other object 
-Such as movies with sets of properties like movie_name, cast_crew, release_date, Earning, Ranking .
-Both of the object can be saved inside one collection group in a database 	
 	
-#### To insert objects and values inside said collection , we can use the command 
+```
+db.my_collection_name.insertOne({car_name: “Tata_nexon”, tyre_sixe: “16 inches”, form_factor: “SUV”, Mileage: “20 kmpl, Fuel_norms: “bs6”})
+```
+	
+or movies with sets of properties like movie_name, cast_crew, release_date, Earning, Ranking .
+Both of the object can be saved inside one collection group in a database 	
+
+	
+	
+### To insert objects and values inside said collection , we can use the command 
 
 	
 	
@@ -203,7 +245,6 @@ db.my_collection_name.insertOne({car_name: “Tata_nexon”, tyre_sixe: “16 in
 	
 	
 Above command will store object will defined property set inside mentioned database and declared collection “my_collection_name”
-
 
 	
 The syntax insertOne define a single object that is getting saved in collection . 
@@ -237,7 +278,27 @@ This will allow inserting many objects will different properties inside a collec
 
 And similarly we can create collections after switching to preffered database .
 
+
+We can use show dbs to view all databases and switch to preferred database by “use” syntax. 
+
+```
+> show dbs
+```
+
+output 
+
+```
+admin         0.000GB
+config        0.000GB
+local         0.000GB
+sunildatabse  0.000GB
+```
 	
+Now write use dbs for switching to preffered database	
+
+```
+> use sunildatabse
+```	
 	
 ```
 db.createCollection(“my_collection_1”)
@@ -256,13 +317,14 @@ We can use show dbs to view all databases and switch to preferred database by �
 ```
 
 this will generate following output 
+
 ```
-Output
 admin         0.000GB
 config        0.000GB
 local         0.000GB
 sunildatabse  0.000GB
 ```
+	
 again to switch to other databse we can use use command 
 ```
 > use sunildatabse
