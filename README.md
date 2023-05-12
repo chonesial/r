@@ -15,7 +15,7 @@
 - [Searching for Databases , Collection and objects](#search)
 - [Deleting](#del)
 
-<p id="moctl">This is the paragraph I want to link to.</p>
+<p id="credata">This is the paragraph I want to link to.</p>
 
 
 ## Prerequisites 
@@ -72,14 +72,32 @@ Now Create a new Database by typing “use databasename”
 10. db.<collection_name>.updateMany(<query>, <update>) - updates all documents that match the specified query in the specified collection with the specified update.
 11. db.<collection_name>.deleteOne(<query>) - deletes the first document that matches the specified query in the specified collection.
 12. db.<collection_name>.deleteMany(<query>) - deletes all documents that match the specified query in the specified collection.
-	
+
+
+## Creation and Managing the Database 
+<p id="credata">This is the paragraph I want to link to.</p>
+##### Create a Database, Named "databsename"
+ 	
 ```
 > use databasename
 switched to db databasename
 ```
+#### The Use command will Automatically create and switch to the databse. 
+
+In Order to View all the Databses Present in MongoDb User.
 
 You can view by using “show dbs” command 
-
+```
+	show dbs 
+```
+#### The Output will show something like this 
+```
+Output
+admin         0.000GB
+config        0.000GB
+local         0.000GB
+sunildatabse  0.000GB
+```
 Collections in Mongodb
 
 Collection in mongoldb are the groups of objects with different sets of properties , different objects with different properties and unique values can be stored inside a collection group without enforcing any common schema as it follows in other RDBMS such as sql . 
