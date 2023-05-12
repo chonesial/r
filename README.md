@@ -40,7 +40,8 @@ services:
     ports:
       - "127.0.0.1:27017:27017"
 ```
-##### using mongo:5 official image beacause mongo:latest is unstable version of mongo.
+	
+#### using mongo:5 official image beacause mongo:latest is unstable version of mongo.
 
 ## MongoDb Command Line tool 
 
@@ -89,10 +90,9 @@ Now Create a new Database by typing “use databasename”
 <p id="credata">This is the paragraph I want to link to.</p>
 #### Create a Database, Named "databsename"
  	
-```
-> use databasename
-switched to db databasename
-```
+```> use databasename
+switched to db databasename```
+
 
 #### The Use command will Automatically create and switch to the databse. 
 
@@ -146,22 +146,24 @@ Both of the object can be saved inside one collection group in a database
 
 To create a collection we can use 
 
-```
-db.createCollection(“my_collection_name”)
-```
+	
+```db.createCollection(“my_collection_name”)```
 
 
+	
 This will create a new collection named : my_collection_name inside the above mentioned database .
 
 Inserting Objects inside Collection 
 To insert objects and values inside said collection , we can use the command 
 
 	
+	
 	```db.my_collection_name.insertOne({car_name: “Tata_nexon”, tyre_sixe: “16 inches”, form_factor: “SUV”, Mileage: “20 kmpl, Fuel_norms: “bs6”})```
 	
 	
 Above command will store object will defined property set inside mentioned database and declared collection “my_collection_name”
 
+	
 	
 The syntax insertOne define a single object that is getting saved in collection . 
 For multiple objects we can use insertMany .
