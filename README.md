@@ -44,6 +44,8 @@ services:
 
 ## MongoDb Command Line tool 
 
+After Checking inside the MongoDb , We need to switch to MongoDb Command Line Tool in order to perform MongoDb related operations. 
+
 ####
 
 <p id="monctl">
