@@ -15,7 +15,7 @@
 - [Searching for Databases , Collection and objects](#search)
 - [Deleting](#del)
 
-<p id="credata">This is the paragraph I want to link to.</p>
+<p id="col">This is the paragraph I want to link to.</p>
 
 
 ## Prerequisites 
@@ -86,7 +86,7 @@ Now Create a new Database by typing “use databasename”
 
 ## Creation and Managing the Database 
 <p id="credata">This is the paragraph I want to link to.</p>
-##### Create a Database, Named "databsename"
+#### Create a Database, Named "databsename"
  	
 ```
 > use databasename
@@ -94,6 +94,22 @@ switched to db databasename
 ```
 #### The Use command will Automatically create and switch to the databse. 
 
+ create new databases using use command .
+```
+use database1 
+```			it will create a database with name database 1
+```
+use database 2 
+```			it will create a database with name database 1
+```
+use database 3 
+```			it will create a database with name database 1
+
+Now we can list all the database using 
+
+#### Show dbs 
+
+Use command also used for switching to databases.
 In Order to View all the Databses Present in MongoDb User.
 
 You can view by using “show dbs” command 
@@ -108,7 +124,8 @@ config        0.000GB
 local         0.000GB
 sunildatabse  0.000GB
 ```
-Collections in Mongodb
+## Collections in Mongodb
+<p id="coll">After the Creation of Database and login , we move forward for creating a collection in which we will store our objects as entries.</p>
 
 Collection in mongoldb are the groups of objects with different sets of properties , different objects with different properties and unique values can be stored inside a collection group without enforcing any common schema as it follows in other RDBMS such as sql . 
 
@@ -119,20 +136,21 @@ Such as movies with sets of properties like movie_name, cast_crew, release_date,
 Both of the object can be saved inside one collection group in a database 
 
 To create a collection we can use 
+```
 db.createCollection(“my_collection_name”)
-
+```
 This will create a new collection named : my_collection_name inside the above mentioned database .
 
 Inserting Objects inside Collection 
 To insert objects and values inside said collection , we can use the command 
-
+```
 db.my_collection_name.insertOne({car_name: “Tata_nexon”, tyre_sixe: “16 inches”, form_factor: “SUV”, Mileage: “20 kmpl, Fuel_norms: “bs6”})
-
+```
 Above command will store object will defined property set inside mentioned database and declared collection “my_collection_name”
 
 The syntax insertOne define a single object that is getting saved in collection . 
 For multiple objects we can use insertMany .
-
+```
 db.my_collection_name.insertMany([
 {
  movie_name: “RRR”,
@@ -150,23 +168,10 @@ Fuel_norms: “bs6”
 }
 ]
 )
+```
 This will allow inserting many objects will different properties inside a collection .
 
- create new databases using use command .
 
-use database1 
-			it will create a database with name database 1
-
-use database 2 
-			it will create a database with name database 1
-
-use database 3 
-			it will create a database with name database 1
-
-Now we can list all the database using 
-Show dbs 
-
-Use command also used for switching to databases.
 
 And similarly we can create collections after switching to preffered database .
 
