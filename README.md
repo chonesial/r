@@ -85,7 +85,7 @@ Now Create a new Database by typing “use databasename”
 
 
 ## Creation and Managing the Database 
-<p id="credata">This is the paragraph I want to link to.</p>
+<p id="credata">There is only one command for creating and switching to an existing database</p>
 
 ### Create a Database, Named "databsename"
  	
@@ -210,7 +210,7 @@ mycollection
 	
 ## Inserting Objects inside Collection 
 
-<p id="objects">This is the paragraph I want to link to.</p>
+<p id="objects"></p>
 	
 In Mongodb you can store different object, 
 such as car with sets of properties like tyres, form_factor, Mileage, Fuel_norms.
