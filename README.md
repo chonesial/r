@@ -15,7 +15,7 @@
 - [Searching for Databases , Collection and objects](#search)
 - [Deleting](#del)
 
-<p id="my-paragraph">This is the paragraph I want to link to.</p>
+<p id="monctl">This is the paragraph I want to link to.</p>
 
 
 ## Prerequisites 
@@ -40,18 +40,24 @@ services:
     ports:
       - "127.0.0.1:27017:27017"
 ```
-//using mongo:5 as mongo:latest is unstable version of mongo 
+##### using mongo:5 official image beacause mongo:latest is unstable version of mongo.
 
-Inside the container 
+## MongoDb Command Line tool 
 
-Start mongoldb Ctl by typing  “mongo” syntax
+####
 
+<p id="monctl">
+
+#### Start mongoldb Ctl by typing  “mongo” syntax
+```
 root@45ab820c7a09:/# mongo
+```
 
 Now Create a new Database by typing “use databasename”
-
+```
 > use databasename
 switched to db databasename
+```
 
 You can view by using “show dbs” command 
 
