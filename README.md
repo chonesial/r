@@ -12,10 +12,7 @@
 - [Mondo Databse Creation](#credata) 
 - [Collections in Mongo](#coll)
 - [Objects in Collections](#objects)
-- [Searching for Databases , Collection and objects](#search)
-- [Deleting](#del)
-
-<p id="obs">This is the paragraph I want to link to.</p>
+- [Management of Assets](#search)
 
 
 ## Prerequisites 
@@ -177,13 +174,7 @@ db.createCollection(“my_collection_5”)
 ```	
 Similarly we can view all the collections after switching to preffered database by using “show collection” syntax.
 
-	
-
-	
-```
-show collections	
-```	
-
+### start from begining 	
 ```
 > show dbs
 ```
@@ -233,9 +224,7 @@ Both of the object can be saved inside one collection group in a database
 
 	
 	
-### To insert objects and values inside said collection , we can use the command 
-
-	
+### To insert objects and values inside said collection , we can use insert command 
 	
 ```
 
@@ -244,7 +233,7 @@ db.my_collection_name.insertOne({car_name: “Tata_nexon”, tyre_sixe: “16 in
 ```
 	
 	
-Above command will store object will defined property set inside mentioned database and declared collection “my_collection_name”
+Above command will store object with defined property set inside mentioned database under declared collection “my_collection_name”
 
 	
 The syntax insertOne define a single object that is getting saved in collection . 
@@ -271,78 +260,9 @@ Fuel_norms: “bs6”
 )
 ```
 	
-	
-This will allow inserting many objects will different properties inside a collection .
-
-
-
-And similarly we can create collections after switching to preffered database .
-
-
-We can use show dbs to view all databases and switch to preferred database by “use” syntax. 
-
-```
-> show dbs
-```
-
-output 
-
-```
-admin         0.000GB
-config        0.000GB
-local         0.000GB
-sunildatabse  0.000GB
-```
-	
-Now write use dbs for switching to preffered database	
-
-```
-> use sunildatabse
-```	
-	
-```
-db.createCollection(“my_collection_1”)
-db.createCollection(“my_collection_2”)
-db.createCollection(“my_collection_3”)
-db.createCollection(“my_collection_4”)
-db.createCollection(“my_collection_5”)
-```
-
-And similarly we use insertOne and insert Many commands to insert objects inside .
-
-We can use show dbs to view all databases and switch to preferred database by “use” syntax. 
-
-```
-> show dbs
-```
-
-this will generate following output 
-
-```
-admin         0.000GB
-config        0.000GB
-local         0.000GB
-sunildatabse  0.000GB
-```
-	
-again to switch to other databse we can use use command 
-```
-> use sunildatabse
-```
-switched to db sunildatabse
-
-Similarly we can view all the collections after switching by using “show collection” syntax.
-
-```
-> show collections
-output
-marvel-movies
-moviename
-mycollection
-```
-
-
-Similarly we can view all the contents inside collection by using “find”
+This will allow inserting many objects with different properties inside a collection .
+ 
+#### we can view all the contents inside collection by using “find”
 
 ```
 > db.mycollection.find()
@@ -373,6 +293,7 @@ Output
 ```
 
 ## Managing the Assets 
+<p id="search">This is the paragraph I want to link to.</p>
 
 Removing/Deleting (Objects, Collections and Database)
 
