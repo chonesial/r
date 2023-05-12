@@ -1,4 +1,5 @@
 # MongoDB Container 
+<p id="topo">
 
 **Table of Contents**
 
@@ -293,20 +294,21 @@ Output
 ```
 
 ## Managing the Assets 
-<p id="search">This is the paragraph I want to link to.</p>
+<p id="search"></p>
 
 Removing/Deleting (Objects, Collections and Database)
 
 WE have several syntaxes for removing inserted values inside mongoDB, that are used to delete records , removing collections and dropping the Databases 
 
-Delete the objects inside Collections
+### Delete the objects inside Collections
 
 To delete an object or a document from a collection in MongoDB, you can use the deleteOne() or deleteMany() methods.
 
 Deleteone method - for deleting single entry 
 
 	
-```db.moviename.deleteone({name:”Avengers”})
+```
+	db.moviename.deleteone({name:”Avengers”})
 ```
 	
 
@@ -316,8 +318,10 @@ This will delete the first object that matches the filter criteria
 ### Delete all objects related to tag
 
 ```
+
 Deletemany 
 db.moviename.deletemany({tyre_size:”16 inches”})
+
 ```
 
 This will delete the all objects that matches the filter criteria 
@@ -327,19 +331,28 @@ This will delete the all objects that matches the filter criteria
 
 ### Deleting the collection
 
+
 ```
+
 db.collectionName.drop()
+
 ```
-This will delete the collection
+
+This will delete the collection by the name collectionName
 
 
 ### Deleting the database 
    
-#### First use that database for switching and then delete by using 
+#### First switch to the database you want to delete, then type  
 
 ```
+
 db.dropDatabase()
-```
-This will Delete the Database you are working on 
 
+```
+
+This will Delete the Database and all the contents inside
+
+
+[Back-to-the-top-of-page](#topo)
 
