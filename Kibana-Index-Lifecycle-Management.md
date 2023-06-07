@@ -12,12 +12,14 @@ It simplifies the process of maintaining your Elasticsearch indices and helps yo
 ### [Phases][phases]
 ### [Conditions](#condition)
 ### [Monitoring and review](#mandr)
-## Prerequisites
+
+## Prerequisites <p id="requisite">
 
  - Active Data source.
  - Connection from Data source to Kibana. 
  - Index Pattern from Data Source.
 
+</p>
 
 ## Creating Index Lifecycle Policy <p id = "ILMP">
 
