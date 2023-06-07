@@ -8,15 +8,15 @@ It simplifies the process of maintaining your Elasticsearch indices and helps yo
 
 ### [Prerequisites](#requisite)
 ### [Index Lifecycle Policy](#ILMP)
-### [Creation of Policy]
-### [Phases]
-### [Conditions and functions]
-
+### [Creation of Policy][policycreation]
+### [Phases][phases]
+### [Conditions](#condition)
+### [Monitoring and review](#mandr)
 ## Prerequisites
 
-### - Active Data source.
-### - Connection from Data source to Kibana. 
-### - Index Pattern from Data Source.
+ - Active Data source.
+ - Connection from Data source to Kibana. 
+ - Index Pattern from Data Source.
 
 
 ## Creating Index Lifecycle Policy <p id = "ILMP">
@@ -60,16 +60,37 @@ we can set rules as how much size or duration an index can hold inside hot phase
   you can set a maximum index age or a maximum index size, beyond which the index should be deleted
 
   
-## Conditions and functions 
+## Conditions
   
-step-5 We can specify conditions and actions for each stage, 
+  When creating index lifecycle policies in Kibana, 
+  you can define conditions that determine when an index should transition from one stage to another. 
+  The conditions are based on certain criteria such as index size, document count, or time. 
+  Here are some commonly used conditions for index lifecycle policies
+  including index rollover, shard allocation, and retention periods.
 
-including index rollover, shared allocation, and retention periods.
+
+### Index Rollover Conditions 
+  
+  allows you to create new indices automatically based on certain conditions, such as index size or time
+  In the Index Lifecycle Policies settings, you can define the rollover conditions for transitioning from one stage to another.
 
 
-Rollover Conditions 
+### Shards Allocation
 
-allows you to create new indices automatically based on certain conditions, such as index size or time
+  plays a crucial role in achieving data redundancy, high availability, and efficient search and query performance
+  
+### Retention periods 
+  
+  Retention periods refer to the length of time that data is retained or kept available within a system or organization. 
+  
+#  Review and monitoring 
+  
+  - In the Index Management page, you can filter the indices based on their assigned policies. On the left-hand side, under the "Indices"     tab, you'll find a filter option labeled "Index lifecycle policy." Click on it and select the specific policy you want to monitor.
 
-In the Index Lifecycle Policies settings, you can define the rollover conditions for transitioning from one stage to another.
-
+  - Once you've applied the policy filter, you'll see a list of indices that are associated with the selected policy. Each index entry         displays information such as index name, size, document count, and the stage it is currently in (e.g., hot, warm, cold, or delete).
+  
+  - Click on an index name to access the index details page. Here, you can view more specific information about the index, including its       shard allocation, index settings, and the index lifecycle policy it is associated with. This page allows you to see if any actions        defined in the policy are failing or encountering errors.
+  
+  - To monitor the transitions of indices between different lifecycle stages, you can use the Index Management page. The "Status" column      provides information on the current stage of each index, and it will automatically update as indices transition based on the policy       conditions you've defined.
+  
+  - Keep an eye out for any errors or warnings displayed in the Index Management interface. Errors might indicate issues with index           lifecycle policy actions, such as failures in shard allocation or issues with index rollover.
