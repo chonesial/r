@@ -12,8 +12,6 @@ It simplifies the process of maintaining your Elasticsearch indices and helps yo
 ### [Phases]
 ### [Conditions and functions]
 
-### [Selection on Index]()
-
 ## Prerequisites
 
 ### - Active Data source.
@@ -32,7 +30,7 @@ step-2 go to the Management section and click on "Index Lifecycle Policies.
 There will list of default policies , you can edit those or you can also attach a policy to automate when and how to transition an index through its lifecycle by clicking on create policy
 
 ## index lifecycle policy defines the lifecycle stages for your indices
-  These stages include the following 
+##### These stages include the following 
   
 ### 1- Hot Phase 
 ### 2- Warm Phase 
@@ -55,10 +53,15 @@ we can set rules as how much size or duration an index can hold inside hot phase
   
   Cold phase is a phase that comes after the "warm phase" in the lifecycle of an index
   phase where index is rarely accessed but still needs to be stored for long-term retention or compliance purposes
-  
+  The cold phase is useful for data that is infrequently accessed but still needs to be retained for historical or regulatory reasons
+
 # Delete Phase 
+  you can define a phase within an ILM policy to delete indices once they meet certain conditions or criteria.
+  you can set a maximum index age or a maximum index size, beyond which the index should be deleted
 
-
+  
+## Conditions and functions 
+  
 step-5 We can specify conditions and actions for each stage, 
 
 including index rollover, shared allocation, and retention periods.
