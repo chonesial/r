@@ -38,6 +38,26 @@ There will list of default policies , you can edit those or you can also attach 
 ### 2- Warm Phase 
 ### 3- Cold Phase
 ### 4- Delete Phase
+  
+# Hot Phase 
+  
+  Hot phase in Index Lifecycle Management refers to the initial active phase of an index 
+and Kibana can be used to configure and manage the ILM policies that govern this phase. 
+Any index new or old when it's actively being written to and queried frequently automatically enters into the Hot Phase. 
+we can set rules as how much size or duration an index can hold inside hot phase before it is sent to another phase .
+  
+
+# Warm Phase
+  
+  During the warm phase, the index transitions from being actively written(initially hot phase) to a phase where it is less frequently accessed but still needs to be readily available for search operations. 
+  
+# Cold Phase 
+  
+  Cold phase is a phase that comes after the "warm phase" in the lifecycle of an index
+  phase where index is rarely accessed but still needs to be stored for long-term retention or compliance purposes
+  
+# Delete Phase 
+
 
 step-5 We can specify conditions and actions for each stage, 
 
