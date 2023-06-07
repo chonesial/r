@@ -21,7 +21,7 @@ It simplifies the process of maintaining your Elasticsearch indices and helps yo
 
 </p>
 
-## Creating Index Lifecycle Policy <p id = "ILMP">
+## Creating Index Lifecycle Policy <p id="ILMP">
 
 Index Lifecycle Management (ILM) is a feature allows actions like rollover, retention, and deletion. 
 
@@ -30,7 +30,8 @@ step-1 go to the Management section and click on "Index Lifecycle Policies.
 step-2 go to the Management section and click on "Index Lifecycle Policies.
 
 There will list of default policies , you can edit those or you can also attach a policy to automate when and how to transition an index through its lifecycle by clicking on create policy
-
+</p>
+ 
 ## index lifecycle policy defines the lifecycle stages for your indices
 ##### These stages include the following 
   
