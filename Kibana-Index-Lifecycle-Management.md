@@ -8,7 +8,7 @@ It simplifies the process of maintaining your Elasticsearch indices and helps yo
 
 ### [Prerequisites](#requisite)
 ### [Index Lifecycle Policy](#ILMP)
-### [Creation of Policy][#policycreation]
+### [Creation of Policy](#policycreation)
 ### [Phases](#phases)
 ### [Conditions](#condition)
 ### [Monitoring and review](#mandr)
