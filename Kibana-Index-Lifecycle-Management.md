@@ -85,7 +85,8 @@ we can set rules as how much size or duration an index can hold inside hot phase
 ### Shards Allocation
 
   plays a crucial role in achieving data redundancy, high availability, and efficient search and query performance
-  
+  you specify the number of primary shards. Each primary shard is a self-contained unit of data responsible for storing a subset of the     index's documents. Additionally, you can configure the number of replica shards, which are exact copies of the primary shards. Replicas    provide redundancy and allow for parallel querying and failover.
+
 ### Retention periods 
   
   Retention periods refer to the length of time that data is retained or kept available within a system or organization. 
