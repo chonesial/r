@@ -34,12 +34,16 @@ There will list of default policies , you can edit those or you can also attach 
  
 ## index lifecycle policy defines the lifecycle stages for your indices
 ##### These stages include the following 
+
 <p id="phases">  
+ 
 ### 1- Hot Phase 
 ### 2- Warm Phase 
 ### 3- Cold Phase
 ### 4- Delete Phase
+
 </p>
+
 # Hot Phase 
   
   Hot phase in Index Lifecycle Management refers to the initial active phase of an index 
