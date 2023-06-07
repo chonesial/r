@@ -31,9 +31,13 @@ step-2 go to the Management section and click on "Index Lifecycle Policies.
 
 There will list of default policies , you can edit those or you can also attach a policy to automate when and how to transition an index through its lifecycle by clicking on create policy
 
-## index lifecycle policy defines the lifecycle stages for your indices, 
-
-such as hot, warm, cold, and delete.
+## index lifecycle policy defines the lifecycle stages for your indices
+  These stages include the following 
+  
+### 1- Hot Phase 
+### 2- Warm Phase 
+### 3- Cold Phase
+### 4- Delete Phase
 
 step-5 We can specify conditions and actions for each stage, 
 
