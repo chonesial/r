@@ -25,6 +25,15 @@ Central Server will be set up on the Office Premises and
 
 Client server will be set up on Client's Side 
 
+for the technical execution , 
+we require following assets 
+
+- private ip 
+- subnet 
+- subnet mask 
+- public ip 
+
+
 ## Installing VPN
 
 ##### follow below for installing OpenVPN
