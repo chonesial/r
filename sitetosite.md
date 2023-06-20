@@ -245,11 +245,12 @@ tail -f /etc/openvpn/s2s.log
 
 ```
 
-#### now you should see the output relate to the configuration 
+now you should see the output relate to the configuration 
 
- test the connectivity 
+### test the connectivity 
 
 now after changing the configuration on both the sides you can test the connectivity using any method via private ips communication.
+
 -----------------------------------------------------------------------------------------------------------------------------------------
 ## Multiple Endpoints through VPN Server 
 
@@ -289,7 +290,61 @@ chmod +x openvpnserup.sh
 7 - Select the Name of the Client : for example delhiclient 
             after completion a new configuration file with name delhiclient.opvn will be create carrying relevant configuration for   
                                    adding your client
+    copy delhiclient.opvn file to /tmp directory
+
+    ```
+
+    cp delhiclient.ovpn /tmp
+
+    ```
+    
 
 
+8 - Configure your VPN Server for routing subnets 
+
+Go to configuration file and enter the routes for private ip for all the clients
+
+```
+vi /etc/openvpn/server.conf
+
+```
                   
+add the private subnet ip and subnet mask 
+
+for example :-  if your 1 client's private subnet is 10.1.0.0/24 add subnet ip 10.1.0.0 and subnet mask as 255.255.240.0 
+                  and 2nd client's subnet is 11.2.0.0/24 add subnet ip 11.2.0.0 and subnet mask as 255.255.240.0
+                
+Add at the end of the file 
+
+```
+
+route 10.1.0.0 255.255.240.0
+route 11.2.0.0 255.255.240.0
+
+```
+
+save the file 
+
+9 - Restart OpenVpn service using this configuration file and your VPN server will start 
+
+10 - Client VPN Enabling 
+
+     First of all Install OpenVPN 
+     then ,
  
+          transfer the delhiclient.ovpn file into the machine 
+          by SCP or simply copy paste into a new file with same name i.e delhiclient.ovpn
+then,   we will run the following command 
+
+```
+
+openvpn --config delhiclient.ovpn
+
+```
+
+you can check the success by checking the ethernet output should have tun declarative ..
+
+11 - you can follow step number 10 for all the clients you need to add to the VPN .
+       
+          
+          
