@@ -247,7 +247,7 @@ tail -f /etc/openvpn/s2s.log
 
 #### now you should see the output relate to the configuration 
 
-## test the connectivity 
+ test the connectivity 
 
 now after changing the configuration on both the sides you can test the connectivity using any method via private ips communication.
 -----------------------------------------------------------------------------------------------------------------------------------------
