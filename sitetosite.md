@@ -7,6 +7,7 @@
 #### Installing OpenVPN
 #### Configuration
 #### Testing
+#### Multiple Endpoints through VPN Server  
 
 
 ## Prerequisite 
@@ -249,3 +250,46 @@ tail -f /etc/openvpn/s2s.log
 ## test the connectivity 
 
 now after changing the configuration on both the sides you can test the connectivity using any method via private ips communication.
+-----------------------------------------------------------------------------------------------------------------------------------------
+## Multiple Endpoints through VPN Server 
+
+#### For Allowing Multiple Servers , Machines or Subnets to be inside a VPN server , we will use following steps : 
+
+1 - Configure your Machine 
+
+2- Now , Just download following script from github , original contributer is angrystan from france. 
+        you can also copy & paste into appropriate shell file 
+
+https://github.com/chonesial/openvpnscript44445/blob/main/openvpnsetup.sh
+
+3 - now , change the file permissions 
+
+```
+
+chmod +x openvpnserup.sh
+
+```
+
+4 - Change your Firewall Setup as per required based upon your O.S . 
+
+5 - Run The Shell Script 
+
+```
+
+./ openvpnsetup.sh
+
+```
+
+6 - Follow the Steps mentioned in the Prompt and Enter the Values as Required .
+       for example -  Port no :
+                      Encryption : 
+                      Protocol  :
+                      ETC ETC
+
+7 - Select the Name of the Client : for example delhiclient 
+            after completion a new configuration file with name delhiclient.opvn will be create carrying relevant configuration for   
+                                   adding your client
+
+
+                  
+ 
