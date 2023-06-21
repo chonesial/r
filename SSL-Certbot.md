@@ -72,4 +72,40 @@ instead of plugin, use your own plugin name
 
 Restart nginx. 
 
-7. 
+## Installation for Third Party Domain
+
+1. Run Create command
+
+```
+sudo certbot certonly --nginx --manual --preferred-challenges dns -d yourdomain.com    
+
+```
+
+Follow the instructions for adding DNS TXT for validation
+
+2. Visit Registrar Management console for adding DNS TXT . 
+   each registrar might have different method for validation.
+
+3. After successful validation , you will be prompted the output containing path to pem files 
+
+4. copy and paste these files inside thirdparty server
+
+5. Create config file inside /etc/nginx directory
+
+   ```
+
+    server {
+    listen 443 ssl;
+    server_name yourdomain.com;
+
+    ssl_certificate /etc/letsencrypt/live/yourdomain.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/yourdomain.com/privkey.pem;
+
+    # Other SSL settings (e.g., preferred protocols, ciphers, etc.)
+    ...
+      }
+
+ ADD PATH to pem files and restart . 
+
+ after that the ssl certificate will be installed 
+
