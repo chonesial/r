@@ -2,10 +2,10 @@
 
 This guide provides step-by-step instructions for installing SSL certificates using Certbot. Certbot is a popular tool that automates the process of obtaining and renewing SSL certificates from Let's Encrypt.
 
-### Content 
-### Prerequisites
-### Installation for Self 
-### Installation for Third Party Domain
+## Content 
+### - Prerequisites
+### - Installation for Self 
+### - Installation for Third Party Domain
 
 
 ## Prerequisites
