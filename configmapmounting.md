@@ -4,10 +4,17 @@ Configmap provides a way to decouple configuration from application containers,
 allowing you to modify the configuration without rebuilding or redeploying the containers.
 
 Contents 
+#### Prerequisite 
 #### Helms Chart 
 #### Configmap Configuration
 #### Mounting of Configmap inside manifest 
 #### Applying 
+
+## Prerequisite 
+
+1. Kubernetes
+2. Helms
+3. Admin access
 
 ## Helms Chart
 
