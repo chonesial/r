@@ -29,10 +29,50 @@ sudo chmod +x /usr/local/bin/gitlab-runner
 install 
 
 ```
-
 cd ~
 gitlab-runner install
 gitlab-runner start
+
+```
+
+for login inside gitlab 
+
+```
+sudo gitlab-runner register
+```
+
+# Configure Docker Executor 
+
+open configuration files 
+
+on macos
+
+```
+
+open ~/Library/Application\ Support/gitlab-runner/config.toml
+
+```
+
+confirm or add [[runners]] , YOUR_REGISTRATION_TOKEN and required image 
+
+```
+[[runners]]
+  name = "My Docker Runner"
+  url = "https://gitlab.com/"
+  token = "YOUR_REGISTRATION_TOKEN"
+  executor = "docker"
+  [runners.docker]
+    tls_verify = false
+    image = "docker:stable"
+    privileged = true
+    disable_entrypoint_overwrite = false
+    oom_kill_disable = false
+    disable_cache = false
+    volumes = ["/cache"]
+  [runners.cache]
+    [runners.cache.s3]
+    [runners.cache.gcs]
+
 
 ```
 
