@@ -1,0 +1,20 @@
+stages:
+  - build
+  - test
+  - deploy
+
+before_script:
+  - docker run -d --name redis-container redis:latest
+  - docker run -d --name mysql-container -e MYSQL_ROOT_PASSWORD=mysecretpassword mysql:latest
+
+build:
+  script:
+    - # build your application
+
+test:
+  script:
+    - # run your tests
+
+deploy:
+  script:
+    - # deploy your application
