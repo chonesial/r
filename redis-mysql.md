@@ -139,5 +139,19 @@ test:
 
 
 ```
+# Address above .gitlab-ci.yml in actual projects pipeline
 
+1. Go to your GitLab project's page.
 
+2. click on "CI/CD" or "Pipelines" to access the CI/CD configuration
+
+3. Edit the pipeline configuration: Look for a button or link that allows you to edit the pipeline configuration. 
+    It may be labeled as "Edit .gitlab-ci.yml" or similar.
+
+4. Replace the existing configuration: 
+   Replace the existing contents of the pipeline configuration
+   file with the .gitlab-ci.yml configuration you provided
+
+5 . Commit and push changes 
+
+### Re-initialization should boot the mentioned images inside container 
