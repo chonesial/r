@@ -76,3 +76,68 @@ confirm or add [[runners]] , YOUR_REGISTRATION_TOKEN and required image
 
 ```
 
+# set up the .gitlab-ci.yml 
+
+set up .gitlab-ci.yml or reconfigure existing for declaring mysql and redis 
+
+```
+image: docker:stable
+
+stages:
+  - test
+
+services:
+  - docker:dind
+
+variables:
+  MYSQL_ROOT_PASSWORD: mysecretpassword
+
+test:
+  stage: test
+  script:
+    - docker run -d --name mysql-container -e MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD mysql:latest
+    - # Set up your application and run tests
+    - # Clean up the MySQL container
+    - docker stop mysql-container
+    - docker rm mysql-container
+
+```
+
+## you need to modified as per project's requirement .
+
+you can also add other variables such as 
+
+```
+
+image: docker:stable
+
+services:
+  - name: mysql:latest
+    alias: mysql
+  - name: redis:latest
+    alias: redis
+
+stages:
+  - test
+
+variables:
+  MYSQL_ROOT_PASSWORD: mysecretpassword
+  MYSQL_DATABASE: mydatabase
+  REDIS_PASSWORD: myredispassword
+
+test:
+  stage: test
+  script:
+    - docker run -d --name mysql-container -e MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD -e MYSQL_DATABASE=$MYSQL_DATABASE --network=service_mysql mysql:latest
+    - docker run -d --name redis-container -e REDIS_PASSWORD=$REDIS_PASSWORD --network=service_mysql redis:latest
+    - # Set up your application and run tests
+    - # Clean up the MySQL and Redis containers
+    - docker stop mysql-container
+    - docker rm mysql-container
+    - docker stop redis-container
+    - docker rm redis-container
+
+
+```
+
+
