@@ -1,0 +1,106 @@
+Certainly! Here's a step-by-step guide to configuring the site-to-site IPsec VPN between subnet-A and subnet-B using Ubuntu machines. We'll assume that you're using the StrongSwan IPsec implementation, which is popular and well-documented.
+
+Step 1: Install StrongSwan
+On both ipsecvpn-A2 and ipsecvpn-B2 machines, install StrongSwan by running the following command:
+
+sql
+Copy code
+sudo apt-get update
+sudo apt-get install strongswan
+Step 2: Configuration Files
+On ipsecvpn-A2, navigate to the StrongSwan configuration directory:
+
+bash
+Copy code
+cd /etc/strongswan.d/
+Create a new file called ipsecvpn-A2.conf:
+
+Copy code
+sudo nano ipsecvpn-A2.conf
+Add the following configuration:
+
+scss
+Copy code
+conn subnetA-subnetB
+    left=ipsecvpn-A2
+    leftsubnet=A1/32
+    right=B1
+    rightsubnet=B1/32
+    authby=secret
+    type=tunnel
+    auto=start
+On ipsecvpn-B2, navigate to the StrongSwan configuration directory:
+
+bash
+Copy code
+cd /etc/strongswan.d/
+Create a new file called ipsecvpn-B2.conf:
+
+Copy code
+sudo nano ipsecvpn-B2.conf
+Add the following configuration:
+
+scss
+Copy code
+conn subnetA-subnetB
+    left=ipsecvpn-B2
+    leftsubnet=B1/32
+    right=A1
+    rightsubnet=A1/32
+    authby=secret
+    type=tunnel
+    auto=start
+Step 3: Pre-Shared Key
+On both ipsecvpn-A2 and ipsecvpn-B2, edit the IPsec secrets file:
+
+bash
+Copy code
+sudo nano /etc/ipsec.secrets
+Add the following line:
+
+arduino
+Copy code
+ipsecvpn-A2 B2 : PSK "your_pre_shared_key"
+On ipsecvpn-B2, add the following line:
+
+arduino
+Copy code
+ipsecvpn-B2 A2 : PSK "your_pre_shared_key"
+Replace "your_pre_shared_key" with a strong and unique pre-shared key for the VPN tunnel.
+
+Step 4: Enable IP Forwarding
+On both ipsecvpn-A2 and ipsecvpn-B2, enable IP forwarding by editing the sysctl configuration file:
+
+bash
+Copy code
+sudo nano /etc/sysctl.conf
+Uncomment the line net.ipv4.ip_forward=1 by removing the '#' at the beginning. Save the file and exit.
+
+Apply the changes:
+
+css
+Copy code
+sudo sysctl -p
+Step 5: Firewall Configuration
+Configure the firewall rules to allow IPsec traffic.
+
+On ipsecvpn-A2, run the following commands:
+
+bash
+Copy code
+sudo ufw allow 500/udp
+sudo ufw allow 4500/udp
+On ipsecvpn-B2, run the following commands:
+
+bash
+Copy code
+sudo ufw allow 500/udp
+sudo ufw allow 4500/udp
+Step 6: Restart StrongSwan
+On both ipsecvpn-A2 and ipsecvpn-B2, restart the StrongSwan service:
+
+Copy code
+sudo systemctl restart strongswan
+That's it! The IPsec VPN should now be established between subnet-A and subnet-B.
+
+Please note that this guide provides a basic configuration for a site-to-site IPsec VPN. You may need to adjust the settings based on your specific network requirements. Additionally, make sure to secure your machines, use strong passwords, and keep your software up to date to maintain a secure VPN connection.
