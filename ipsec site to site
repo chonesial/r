@@ -1,4 +1,5 @@
-Certainly! Here's a step-by-step guide to configuring the site-to-site IPsec VPN between subnet-A and subnet-B using Ubuntu machines. We'll assume that you're using the StrongSwan IPsec implementation, which is popular and well-documented.
+Certainly! Here's a step-by-step guide to configuring the site-to-site IPsec VPN between subnet-A and subnet-B using Ubuntu machines. 
+We'll assume that you're using the StrongSwan IPsec implementation, which is popular and well-documented.
 
 Step 1: Install StrongSwan
 On both ipsecvpn-A2 and ipsecvpn-B2 machines, install StrongSwan by running the following command:
