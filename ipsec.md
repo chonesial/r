@@ -186,7 +186,7 @@ Step 1 : Route traffic between
          test-server-01 and VPN-server-02 
          VIA VPN-Server-01 as VPN-server-01 can communicate to both of them 
 
-#### First, add route inside test-server-01 to reach vpn-server-02 using private I.Ps 
+#### First, add route inside test-server-01 to reach vpn-server-02 using private ip of VPN-server-01 
 
 - go to the test-server-01 and run add route command
  
@@ -197,37 +197,26 @@ sudo ip route add 10.122.0.2 via 10.108.16.2 dev eth1
 ```         
 
  
-#### Now add route inside vpn-server-02 to reach test-server-01 using private I.Ps 
+#### Now add route inside test-server-02 to reach VPN-server-01 using private I.Ps 
 
 - go to the VPN-server-02 and run add route command
 
 ```
 
-sudo ip route add 10.108.16.3 via 10.108.16.2 dev eth1
+sudo ip route add 10.108.16.2 via 10.122.0.2 dev eth1
 
 ```
 
-### Now we will do same for Test-server-01 and Test-server-02
-
-- Go to the test-server-01 and run add route command
-
-- We will route traffic via vpn-server-02
-
-```
-
-sudo ip route add 10.122.0.3 via 10.122.0.2 dev eth0
-
-```
+### Now we will Add Route on Test-server-02 to reach test-server-1 using VPN-server-02
 
 - Go to the test-server-02 and run add route command
 
-- We will route traffic via vpn-server-02 
-
+- We will route traffic via vpn-server-02 because VPN server 2 can reach both vpnserver-01 and test-server-01
 
 ```
 sudo ip route add 10.108.16.3 via 10.122.0.2 dev eth1
 
 ```
 
-# check the conectivity 
+# Now we will check the conectivity 
 
