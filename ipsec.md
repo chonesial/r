@@ -14,7 +14,7 @@
 
 ### Content
 
-1- Setting up the server 
+1- Setting up the server
 2- Installation
 3- PSK 
 4- Configuration files on both the servers 
